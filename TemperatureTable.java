@@ -72,6 +72,27 @@ public class TemperatureTable
     }
     
     /**
+     * returns the lowest value in the array
+     */
+    public int getLowest()
+    {
+       int lowest = temperaturesArray[0][1];
+       for (int row = 0; row < rows; row++)
+       {
+          for (int col = 0; col < cols; col++)
+          {
+             int currentColumn = temperaturesArray[row][col];
+             // System.out.println(currentColumn);
+             if (currentColumn < lowest)
+             {
+                lowest = currentColumn;
+             }
+          }
+       }   
+       return lowest;
+    }
+    
+    /**
      * Returns true if the target is in the array, otherwise false.
      * 
      * @param target, the value to search for in the array.
